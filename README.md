@@ -3,7 +3,7 @@
 
 3DTetris flash project. _(Actionscript 3)_
 
-**Play it in your browser:** https://vanhumbeecka.github.io/3DTetris/
+**Play it in your browser:** https://3dtetris.codemine.be/
 
 ## About
 

@@ -22,7 +22,7 @@ npm run build                         # assembles build/ (gitignored)
 npm start                             # build + serve build/ locally
 ```
 
-Deploy: every push to `master` runs `static.yml` (test, build, upload `build/` to GitHub Pages). Pages is configured for workflow builds; the site is https://vanhumbeecka.github.io/3DTetris/.
+Deploy: every push to `master` runs `static.yml` (test, build, upload `build/` to GitHub Pages). Pages is configured for workflow builds; the site is https://3dtetris.codemine.be/ (custom domain via Cloudflare-proxied CNAME to `vanhumbeecka.github.io`; the github.io URL redirects there).
 
 ## Web wrapper design
 
