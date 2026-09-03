@@ -1,0 +1,16 @@
+{
+  "name": "isoblocks",
+  "version": "1.0.0",
+  "description": "IsoBlocks (3DTetris), a Flash game served in the browser via the Ruffle emulator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "npm run build && serve build",
+    "test": "node --test \"test/**/*.test.mjs\""
+  },
+  "devDependencies": {
+    "@ruffle-rs/ruffle": "0.5.0",
+    "serve": "^14.2.4"
+  }
+}
