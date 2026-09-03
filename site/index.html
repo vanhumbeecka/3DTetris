@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IsoBlocks</title>
+  <meta name="description" content="IsoBlocks: Tetris in isometric 3D. A Flash game from 2013, playable in the browser via Ruffle.">
+  <style>
+    html, body { margin: 0; height: 100%; background: #1c1c1c; color: #ddd; font: 15px/1.5 system-ui, sans-serif; }
+    body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; padding: 1rem; box-sizing: border-box; }
+    #player { width: min(100%, 1100px); aspect-ratio: 550 / 400; }
+    #player ruffle-player { width: 100%; height: 100%; display: block; }
+    p { margin: 0; text-align: center; }
+    a { color: #7fb8e6; }
+  </style>
+  <script src="ruffle/ruffle.js"></script>
+</head>
+<body>
+  <div id="player"></div>
+  <p>Click the game to give it focus, then press <kbd>P</kbd> to play.</p>
+  <p><a href="https://github.com/vanhumbeecka/3DTetris">Source on GitHub</a> · runs in the browser thanks to <a href="https://ruffle.rs">Ruffle</a></p>
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+      autoplay: 'on',
+      letterbox: 'on',
+      allowScriptAccess: true,
+      // The game blocks on the Newgrounds API gateway before starting; it is referenced over
+      // plain HTTP inside the SWF and must be upgraded when this page is served over HTTPS.
+      upgradeToHttps: true,
+      logLevel: 'warn',
+    };
+    window.addEventListener('load', async () => {
+      const player = window.RufflePlayer.newest().createPlayer();
+      document.getElementById('player').appendChild(player);
+      await player.ruffle().load('3DTetris.swf');
+    });
+  </script>
+</body>
+</html>
